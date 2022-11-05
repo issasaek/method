@@ -1,0 +1,113 @@
+\documentclass[leqno]{ltjsarticle}
+\renewcommand{\headfont}{\bfseries} % 見出しフォント
+\usepackage{luatexja}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{newpxtext,newpxmath}
+\usepackage{enumitem} % 箇条書きのカスタマイズ
+\usepackage[absolute,overlay]{textpos}
+\usepackage{url}
+\newcommand{\version}{v1.0}
+\usepackage[luatex,unicode,pdfencoding=auto]{hyperref}
+\hypersetup{
+  bookmarksnumbered=true,
+  colorlinks=true,
+  allcolors=blue,
+  pdftitle={Loredux-Method},
+  pdfauthor={佐伯 一冴},
+  pdfsubject={\version},
+  pdfkeywords={}
+}
+% 定理環境
+\newtheoremstyle{mystyle}%   % スタイル名
+    {5pt}%                   % 上部スペース
+    {5pt}%                   % 下部スペース
+    {}%                      % 本文フォント
+    {}%                      % 1行目のインデント量
+    {\bfseries}%             % 見出しフォント
+    {}%                      % 見出し後の句読点
+    {9.247pt}% 全角の幅        % 見出し後のスペース
+    {\thmname{#1}\thmnumber{\hspace{2pt}#2}\thmnote{\hspace{7pt}[\gtfamily#3]}}%                      % 見出しの書式
+\theoremstyle{mystyle}
+\newtheorem{df}{D}[section]% 定理環境(定義)
+\newtheorem{axim}{A}[]% 定理環境(公理)
+\newtheorem{thm}{T}[]% 定理環境(定理)
+\newtheorem*{pf}{証明.}% 定理環境(証明) \textbf{照明．}
+\newtheorem*{pfx}{証明の概略.}% 定理環境(証明)
+\newtheorem*{nom}{正規性論証.}% 定理環境(証明)
+\newtheorem*{dem}{論証.}% 定理環境(証明)
+% log型関数
+\DeclareMathOperator{\func}{Func}
+\DeclareMathOperator{\cor}{Cor}
+\DeclareMathOperator{\seq}{SEQ}
+\DeclareMathOperator{\trcl}{trcl} % 下部構造
+% 0項演算子
+\newcommand{\univ}{\mathrm{V}} % 普遍クラス
+\newcommand{\img}{{\mspace{1mu}{``}\mspace{1mu}}} % 関係の像
+\newcommand{\fap}{{\mspace{1mu}{`}\mspace{1mu}}} % 関数適用
+\newcommand{\resl}{\mathbin{\mid}} % 関係の積
+\newcommand{\uphl}{\mathbin{\upharpoonleft}} % 左域の制限
+\newcommand{\uphr}{\mathbin{\upharpoonright}} % 右域の制限
+\newcommand{\exten}{\mathbin{\between}} % モデルに相対的な論理式の外延
+% 1項演算子
+\newcommand{\union}[1]{{\textstyle\bigcup}\mspace{3mu}#1} % クラス合併
+\newcommand{\intersect}[1]{{\textstyle\bigcap}\mspace{3mu}#1} % クラス共通部分
+\newcommand{\classab}[1]{\{\mspace{2mu}#1\mspace{2mu}\}} % クラス抽象
+\newcommand{\barl}[1]{\bar{\:\:}#1} % 補クラス
+\newcommand{\dotl}[1]{\dot{\:\:}#1} % 関係部分
+\newcommand{\brevel}[1]{\breve{\:\:}#1} % 関係の逆
+\newcommand{\tildel}[1]{\tilde{\:\:}#1} % 系列の反転
+\newcommand{\ance}[1]{{^*}#1} % 祖先関係
+\newcommand{\orp}[1]{\langle #1 \rangle}% 順序対
+\newcommand{\kagi}[1]{「~#1~」}% 半角引用
+\newcommand{\trgl}[1]{{^\triangleleft}#1} % 左域の唯一の要素
+\newcommand{\indx}[1]{\mathfrak{h}#1} % 有意指標
+\newcommand{\app}[1]{\mathrm{app}_{#1}} % 適用条件
+\newcommand{\exe}[1]{\mathrm{exe}_{#1}} % 構成要件
+\newcommand{\enf}[1]{\mathrm{enf}_{#1}} % 執行可能性
+\newcommand{\cs}[1]{\mathrm{cs}_{#1}} % 制御構造
+\newcommand{\cty}[1]{\mathrm{cty}_{#1}} % 制御可能性
+\newcommand{\bkg}[1]{\mathbin{\vartriangleright_{#1}}} % 背景条件
+% 2項演算子
+\newcommand{\iter}[2]{#1^{\mid #2}} % 関係の反復
+\newcommand{\timex}[2]{#1^{\times #2}} % 直積の反復
+\newcommand{\prob}[2]{#1^{:#2}} % 蓋然性
+\newcommand{\msec}[2]{#1^{\circledcirc #2}} % メンバーの系列要素
+\newcommand{\mser}[2]{#1^{\otimes #2}} % メンバーの反転系列要素
+% 真理関数の点
+\newcommand{\md}[1]{{\;#1\;}}
+\newcommand{\ld}[1]{{\;#1\!}}
+\newcommand{\rd}[1]{{\!#1\;}}
+\newcommand{\tdot}{{:\mspace{-3.5mu}.}}
+\newcommand{\tdos}{{.\mspace{-3.5mu}:}}
+\newcommand{\sdot}{{:\mspace{2mu}:}}
+% 真理関数
+\newcommand{\con}[1]{%
+	\ifcase #1%
+    \or \md{.} \or \md{:} \or \md{\tdot} \or \md{\sdot}
+	\fi%
+}%
+\newcommand{\case}[3]{%
+	\ifcase #2%
+    \or \ld{.} \or \ld{:} \or \ld{\tdos} \or \ld{\sdot}
+	\fi%
+  \ifcase #1%
+    \or \supset \or \lor \or \equiv \or 
+  \fi%
+  \ifcase #3%
+    \or \rd{.} \or \rd{:} \or \rd{\tdot} \or \rd{\sdot}
+  \fi%
+}%
+
+\newcommand{\fndp}[2]{foundation~\cite[\href{https://issasaek.github.io/foundation/foundation.pdf\#page=#1}{p.\,#2}]{foundation}}
+\newcommand{\fndpp}[2]{foundation~\cite[\href{https://issasaek.github.io/foundation/foundation.pdf\#page=#1}{pp.\,#2}]{foundation}}
+
+\begin{document}
+
+\input{01.tex}
+\input{02.tex}
+\input{03.tex}
+
+\bibliographystyle{jplain}
+\bibliography{refs}
+
+\end{document}
