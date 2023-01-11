@@ -9,11 +9,10 @@ jobs:
       - name: Set up Git repository
         uses: actions/checkout@v2
       - name: Compile LaTeX document
-        uses: dante-ev/latex-action@latest
+        uses: xu-cheng/latex-action@v2
         with:
-          # working_directory: ./method
           root_file: method.tex
-          args: -gg -pdflua
+          latexmk_use_lualatex: true
     # Copy PDF file
       - name: Copy PDF file
         run: mkdir docs && cp *.pdf docs/
