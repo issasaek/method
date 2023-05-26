@@ -26,14 +26,14 @@
 そして論理式は，次の3つの規則により再帰的に記述される．
 \begin{enumerate}[label=(\arabic*)]
     \item \kagi{$ R\alpha_1\dots\alpha_n $}の\kagi{$ R $}に$0\neq n$項述語記号の$i$番目を，\kagi{$ \alpha_1\dots\alpha_n $}に$n$個の変項を並べて代入した結果は，論理式である．
-    \item \kagi{$\neg P$}と\kagi{$P\supset Q$}において，\kagi{$P$}と\kagi{$Q$}に任意の論理式を代入した結果は，論理式である．
+    \item \kagi{$\neg P$}と\kagi{$(P\supset Q)$}において，\kagi{$P$}と\kagi{$Q$}に任意の論理式を代入した結果は，論理式である．
     \item \kagi{$(\alpha)P$}において，\kagi{$\alpha$}に任意の変項を，\kagi{$P$}に任意の論理式を代入した結果は，論理式である．
 \end{enumerate}
 連言\kagi{$ \con{1} $}，選言\kagi{$ \lor $}，双条件法\kagi{$ \equiv $}等の他の真理関数は否定と条件法から，存在量化子\kagi{$ (\exists x) $}は普遍量化子から定義できる．否定と条件法及び普遍量化以外の組み合わせを原始的として，他をそこから定義することもできる．
 
 次に，1個の標準言語は，当該言語の述語として使用する述語記号を指定することによって規定される．例えば$\mathfrak{L}$では，$2$項述語記号の$0$番目\kagi{$ (F,\!,) $}が，要素関係を表わす\kagi{$ \in $}の形式的な表現であるとみなされる．すなわち，
 \begin{itemize}
-    \item \kagi{$\alpha\in\beta$}の\kagi{$\alpha$}と\kagi{$\beta$}に任意の変項を代入した結果は，\\\hfill
+    \item \kagi{$(\alpha\in\beta)$}の\kagi{$\alpha$}と\kagi{$\beta$}に任意の変項を代入した結果は，\\\hfill
     \kagi{$ (F,\!,)\alpha\beta $}に同一の代入をした結果を表わす．
 \end{itemize}
 この文脈的定義により，\kagi{$ (F,\!,) $}は，$\mathfrak{L}$における実質的な原始的述語として（実際上は\kagi{$ \in $}で代用して），使用される．
