@@ -3,7 +3,7 @@
 \section{存在論的還元}
 \label{sec:存在論的還元}
 
-信念体系の最適化の第二段階は，第一段階である論理的還元（規格化）を通過した信念体系$\mathfrak{B}'$を，その存在論の全ての要素を供給する理論$\mathrm{ZFC}$を受容している信念体系$\mathfrak{B}''$へと改造する工程である．存在論は存在文のクラスであり，$\mathfrak{B}'$の存在論は$\mathfrak{B}''$のそれの部分クラスである．また，$\mathrm{ZFC}$は\fndp{9}{9}で提示した標準的な集合論の体系だ．
+信念体系の最適化の第二段階は，第一段階である論理的還元（規格化）を通過した信念体系$\mathfrak{B}'$を，その存在論を確定する理論$\mathrm{ZFC}$を受容している信念体系$\mathfrak{B}''$へと改造する工程である．存在論は存在文のクラスであり，$\mathfrak{B}'$の存在論は$\mathfrak{B}''$のそれの部分クラスである．また，$\mathrm{ZFC}$は\fndp{9}{9}で提示した標準的な集合論の体系だ．
 
 ところで，（人間の）信念体系$b$と理論$u$について，$u\subseteq b$であることは普通はない．公理の全ての帰結を人間が把握することはできないからだ．また，理論の公理は，公準として枚挙的に指定されるか，公理型式の代入例が公理であるという仕方で指定される．すると，$u$の公理集合$u'\subseteq u$と，$u$の公準の集合$u''\subseteq u'$について，$u' = u''$でない限り，$u'\subseteq b$であることも普通はない．公理型式の全ての代入例を人間が把握することはできないからだ．
 そこで，$b$が$u$を受容している事態を次のように捉えることにしよう．すなわち，$ \orp{p,h} $に対して，文$p$が文型$h$の代入例であることを記述する文を与える関数を$\phi$とすると，任意の$p\in u$と，$u$の公準の集合$ u''$について，
@@ -12,66 +12,73 @@
 \end{align*}
 であるとき，かつそのときに限り，$b$は$u$を受容している．
 
-次に，$\mathrm{ZFC}$が$\mathfrak{B}''$の存在論の全ての要素を供給する，と言うことの意味は\ref{ssec:存在論}で明らかになる．
+次に，$\mathrm{ZFC}$が$\mathfrak{B}''$の存在論を確定している，と言うことの意味は\ref{ssec:存在論}で明らかになる．
 
 \subsection{存在論}
 \label{ssec:存在論}
 
-一般に，標準言語$l$と$t\subseteq l$について，$s\subseteq t$である存在文のクラス$s$を，$t$の存在論と言う．ここで存在文は，\kagi{$ (\exists x)Fx $}の代入例となる$l$の文だ．一般に$t$は何らかの$l$の理論であるか，ある時点のある人の信念体系である．
-また，存在文$p\in s\subseteq t$が，クラス理論$u\subseteq l$によって供給されるというのは次のことを意味する．まずクラス理論$u$は$t$が理論ならその部分クラスであり，$t$が信念体系ならそれに受容されている理論である．そして，$l$の文から作られるクラス抽象体$r$と$l$の開放文$q$が存在して，次の1〜3を充たす．
+一般に，標準言語$l$と$t\subseteq l$について，$t$のメンバーである存在文のクラスを$t$の存在論と言う．ここで存在文とは，\kagi{$ (\exists x)Fx $}の代入例となる標準言語の文だ．また，$t$は何らかの$l$の理論であるか，ある時点のある人の信念体系である．
+以下$l = \mathfrak{L}$と想定しよう．$\mathfrak{L}$においては，$2$項述語記号の$0$番目が要素関係を表わす\kagi{$ \in $}に相当する原始的述語である（\ref{ssec:標準言語}）．$u\subseteq l$が何らかのクラス理論であるとき，$u$の公理はこの\kagi{$ \in $}の用法を規定している．そして，$u$が$t$の存在論を確定しているというのは，以下の条件を充たすことを意味している．
 \begin{enumerate}
-    \item $p$は，\kagi{$ (\exists x)Fx $}の\kagi{$ Fx $}に$q$を代入した結果である．
-    \item \kagi{$ (x)(Fx\case{1}{0}{1}x\subseteq\alpha) $}の\kagi{$ \alpha $}に$r$を，\kagi{$ Fx $}に$q$を代入した結果は，$t$のメンバーである\footnote{
-        \kagi{$ (x)(Fx\case{1}{0}{1}x\subseteq\alpha) $}への代入結果は，$t$が理論であり$u\subseteq t$であるとき，$p$が属する理論$t'\subseteq t$と$u$を架橋する法則と言える．架橋法則により，\kagi{$ (\exists x)Fx $}と\kagi{$ (\exists x)(x\subseteq\alpha\con{1}Fx) $}の各代入結果から作られた双条件法が，$t$のメンバーになる（$t$で等値）．
-    }．
-    \item \kagi{$ (\exists x)(x = \alpha) $}の\kagi{$ \alpha $}に$r$を代入した結果は，$u$のメンバーである．
+    \item $u$は$t$が理論ならその部分クラスであり，$t$が信念体系ならそれに受容されている理論である．
+    \item $t$の任意の原始的述語$f$について，$f$が$n$項述語記号の$i$番目であり，かつ，$\orp{n,i}\neq\orp{2,0}$であるとする．このとき，下記(1)(2)の型式に後述の代入を行った結果のいずれかが$t$のメンバーである．また，$t$が理論ならば当該代入結果のいずれかが$t$の公理である．さらに，(3)に後述の代入を行った結果が$u$のメンバーである．
+    \setcounter{equation}{0}
+    \begin{align}
+        \classab{\orp{\alpha_1,\dots,\alpha_n}:R\alpha_1\dots\alpha_n} = \beta,\\
+        \classab{\orp{\alpha_1,\dots,\alpha_n}:R\alpha_1\dots\alpha_n} \subseteq \beta,\\
+        (\exists x)(x = \beta).
+    \end{align}
+    代入は以下のように行う．\kagi{$ R\alpha_1\dots\alpha_n $}の\kagi{$ R $}に$f$を，\kagi{$ \alpha_1\dots\alpha_n $}に$n$個の変項を並べて代入する．
+    \kagi{$\orp{\alpha_1,\dots,\alpha_n}$}には，同じ$n$個の変項から作られる順序対表現を代入する．\kagi{$ \beta $}には$l$の文から作られるクラス抽象体を代入する．
 \end{enumerate}
 
-今，$ l = \mathfrak{L}\con{1}t = \mathfrak{K} $として，$\mathfrak{K}$を標準的な科学とテクノロジーに関連する理論を実質的に全て含むような包括的な$\mathfrak{L}$の理論としよう．\fndpp{18}{18--20}においては，真理集合$\mathrm{T}^{(\breve{\epsilon}\fap 0)}\cap\mathfrak{L}$の部分クラスとして$\mathfrak{K}$が想定されている．また，$\mathfrak{K}$には$\mathrm{ZFC}$集合論から置換公理を除いた理論ZCが含まれ\footnote{正確には，原初的言語ではなく$\mathfrak{L}$に合わせてZCを再解釈したものが$\mathfrak{K}$に含まれる．}，$\mathfrak{K}$の存在論$s$の任意のメンバーがZCによって供給される（と想定される）．例えば$q$が「$x$はマイナスの電荷を持つ素粒子である」に相当する$\mathfrak{L}$の文とすると，\kagi{$ (x)(Fx\case{1}{0}{1}x\subseteq\timex{\mathbb{R}}{4}) $}の代入例が$\mathfrak{K}$で証明可能である（と想定される）．そして，\kagi{$ (\exists x)(x = \timex{\mathbb{R}}{4}) $}はZCで証明可能である．
+条件2の(1)(2)への代入結果を「還元規則」と言う．それは原始的述語の外延を規定することによって$t$の存在論を明確化する．
+例えば，理論$t$のメンバーに\kagi{$ x\text{ は電子である} $}に相当する文が出現し，かつ，それが（原始的述語に変項を結合した）原子文であるとしよう．
+すると，もしクラス理論$u\subseteq t$が$t$の存在論を確定しているならば，
+\[
+   \classab{x:x\text{ は電子である}}\subseteq \mathcal{P}(\timex{\mathbb{R}}{4})
+\]
+のような対応する還元規則が$t$のメンバーになっており，かつ，
+\[
+   (\exists x)(x = \mathcal{P}(\timex{\mathbb{R}}{4}))
+\]
+が$u$で証明可能である．この点，$\mathrm{ZFC}$から置換公理を除いた$\mathrm{ZC}$について，$\mathrm{ZC}\subseteq u$ならば実際に証明可能であり，さらに，上記の還元規則と分出公理（\ref{ssec:集合論の体系}のA \ref{axim:分出}）によって，
+\[
+   (\exists y)(y = \classab{x:x\text{ は電子である}})
+\]
+が$t$で証明可能になる．他の原始的述語についても同様である\footnote{
+    原始的でない複合的な述語に関する還元規則についても，これに出現する原始的述語の還元規則に基づいて，$t$で証明可能になり得る．例えば，$t$のメンバーに「$x$はマイナスの電荷を持つ素粒子である」に相当する複合文が出現する場合，これの還元規則と外延の存在が$t$で証明可能であり得る．
+}．
 
-次に，$ l = \mathfrak{L}\con{1}t = \mathfrak{B}' $としよう．第一段階を通過した信念体系$ \mathfrak{B}' $は，理想的には$\mathfrak{L}$の文のクラスであり，また理論$\mathfrak{K}$の部分クラスを含んでいる．例えば，$ \orp{a,b}\in x\bkg{\epsilon}y $であることを記述する文が$ \mathfrak{B}' $のメンバーであるとき，
+なお，$t$の存在論が確定されているとき，それはクラス理論を（$t$が信念体系なら少なくともその一部を）含んでいるから，量化の変項の値に制限はないとみなされる．この点，クラス理論に属しない文（$t$が理論なら集合論以外の公理など）において，変項の値の範囲を実質的に制限したい場合は，\kagi{$ (x)(x\in\alpha\case{1}{1}{0}Fx) $}という明示的な形式を使うことができる．この形式では，束縛変項\kagi{$ x $}の値域が，\kagi{$ \alpha $}に代入される抽象体が指示するクラスへと実質的に制限される．
+
+ところで，\fndpp{18}{18--20}において，真理集合$\mathrm{T}^{(\breve{\epsilon}\fap 0)}\cap\mathfrak{L}$の部分クラスとして，標準的な科学とテクノロジーに関連する理論を実質的に全て含むような包括的な$\mathfrak{L}$の理論$\mathfrak{K}$が想定されている．
+この$\mathfrak{K}$の存在論は$\mathrm{ZC}$によって確定されると考えられる．つまり，$\mathrm{ZC}\subseteq\mathfrak{K}$であり\footnote{正確には，原初的言語ではなく$\mathfrak{L}$に合わせて$\mathrm{ZC}$を再解釈したものが$\mathfrak{K}$に含まれる．}，また，言語$\mathfrak{L}$の構成上，同一性述語と数学的述語は原始的述語ではなく，定義によって導入される．したがって，同一性の法則や数学的法則は$\mathrm{ZC}$の定理として，$\mathfrak{K}$に取り込まれる．
+この点について，第一段階を通過した信念体系$ \mathfrak{B}' $は，理想的には，$\mathfrak{B}'\subseteq\mathfrak{L}$であり，かつ，$\mathfrak{K}$を部分的に含んでいる．例えば，$ \orp{a,b}\in x\bkg{\epsilon}y $であることを記述する文が$ \mathfrak{B}' $のメンバーであるとき，
 \[
     x\uphl(x\bkg{\epsilon}y)\subseteq \univ\times y
 \]
 であることを記述する$\mathfrak{K}$に属する一般化が，$ \mathfrak{B}' $のメンバーになるかもしれない．しかし，背景条件に言及する形ではなく，明示的に解釈空間に相対化された因果記述も$\mathfrak{B}'$に含まれ得る．つまり，
 \[
-   \text{ \kagi{$ \orp{\alpha,\beta}\to_{\epsilon}\orp{\gamma,\delta} $} }
+    \orp{\alpha,\beta}\to_{\epsilon}\orp{\gamma,\delta}
 \]
 の型文字にそれぞれ$a,x,b,y$を指示する抽象体を代入した結果．\kagi{$ \epsilon $}は型文字のままか変項$v$に置換されると考えられる．そして，\kagi{$ \epsilon $}の位置に来る抽象体が指示するか，または，$v$の値となる解釈空間は，\fndp{18}{18}の条件1〜4を充たすものと（$\mathfrak{B}'$において）想定されている．したがって，$\mathfrak{B}'$には，
 \setcounter{equation}{0}
 \begin{align}
-    \text{
-        \kagi{$ (\exists x)(\exists n)[\mathrm{sim}\,x\con{1}2\in n\in\mathbb{N}\con{1}\Lambda\neq \trgl{\arg x} = \mathcal{W}\fap n] $}
-    }
+    (\exists x)(\exists n)[\mathrm{sim}\,x\con{1}2\in n\in\mathbb{N}\con{1}\Lambda\neq \trgl{\arg x} = \mathcal{W}\fap n]
 \end{align}
 に相当する文や，それが含意する
 \begin{align}
-    \text{
-        \kagi{$ (\exists z)(\exists n)(z = \mathcal{W}\fap n\neq\Lambda\con{1}2\in n \in\mathbb{N}) $}
-   }
+    (\exists z)(\exists n)(z = \mathcal{W}\fap n\neq\Lambda\con{1}2\in n \in\mathbb{N})
 \end{align}
-に相当する文（ZCのモデルの対象領域の存在を肯定する）が含まれ得る．また$\mathfrak{B}'$には，解釈空間に相対化された因果の概念だけでなく，それに基づく規制の概念も取り込まれている．すると規制類型の階層構造によって（\fndp{44}{44}），次の型式の\kagi{$ \gamma $}に$2$より大きい数を指示する抽象体を代入した結果も，$\mathfrak{B}'$に含まれ得る．
+に相当する文（$\mathrm{ZC}$のモデルの対象領域の存在を肯定する）が含まれ得る．また$\mathfrak{B}'$には，解釈空間に相対化された因果の概念だけでなく，それに基づく規制の概念も取り込まれている．すると規制類型の階層構造によって（\fndp{44}{44}），次の型式の\kagi{$ \gamma $}に$2$より大きい数を指示する抽象体を代入した結果も，$\mathfrak{B}'$に含まれ得る．
 \begin{align}
-    \text{
-        \kagi{$ (\exists z)(z = \mathcal{W}\fap \gamma\neq\Lambda) $}
-   }
+    (\exists z)(z = \mathcal{W}\fap \gamma\neq\Lambda).
 \end{align}
-(1)(2)(3)は，$\mathfrak{K}$や$\mathrm{T}^{(\breve{\epsilon}\fap 0)}\cap\mathfrak{L}$のメンバーではなく\footnote{
-    もし$\mathfrak{K}$のメンバーならば，$\mathfrak{K}$のモデルの存在，つまり$\mathfrak{K}$の無矛盾性が$\mathfrak{K}$で証明可能になるだろう．しかしそれはあり得ない．清水~\cite[p.\,131,169]{清水}．
-}，かつ，ZCによっては供給できない．仮にそれらがZCによって供給されるなら，
-\[
-    \text{\kagi{$ (x)(Fx\case{1}{0}{1}x\subseteq \alpha) $}}
-\]
-への代入結果が$\mathfrak{B}'$に属する．しかし，ZCが$\mathfrak{B}'$で受容されているならば，\kagi{$ \alpha $}に代入される抽象体は，
-(1)(2)では\kagi{$ \union{(\mathcal{W}\img\mathbb{N})}\subseteq \alpha $}の代入結果がZCのメンバーになり，(3)では\kagi{$ \mathcal{W}\fap 3\subseteq \alpha $}等の代入結果がZCのメンバーになるような抽象体だろう．すると，
-\[
-   \text{
-    \kagi{$ (\exists x)(x= \alpha) $}
-   }
-\]
-への同じ代入結果はZCのメンバーではない\footnote{
-    もしZCのメンバーならば，ZCのモデルの存在，つまりZCの無矛盾性がZCで証明可能になってしまう．
-}．他方，(1)(2)(3)は$\mathrm{ZFC}$によっては供給可能である．
+(1)(2)(3)は$\mathrm{T}^{(\breve{\epsilon}\fap 0)}\cap\mathfrak{L}$のメンバーではなく，それゆえに$\mathfrak{K}$や$\mathrm{ZC}$のメンバーでもない\footnote{
+    もし$\mathfrak{K}$のメンバーならば，$\mathfrak{K}$のモデルの存在，つまり$\mathfrak{K}$の無矛盾性が$\mathfrak{K}$で証明可能になるだろう．しかしそれはあり得ない．$\mathrm{ZC}$についても同様である．清水~\cite[p.\,131,169]{清水}．
+}．
+これらに類する存在文を体系的に供給するには，$\mathrm{ZFC}$が必要である．$\mathfrak{B}'$から$\mathfrak{B}''$への移行は，還元規則と$\mathrm{ZFC}$の公理（の一部）を$\mathfrak{B}'$に追加することによって行われる．
 
 \subsection{集合論の体系}
 \label{ssec:集合論の体系}
@@ -153,17 +160,13 @@ $ \timex{\mathbb{R}}{4} $を四次元時空と同一視すれば，その要素�
 例えば，\kagi{$ Fx $}に\kagi{$ x\text{ は電子である} $}を，\kagi{$ \alpha $}に\kagi{$ \timex{\mathbb{R}}{4} $}を代入した結果．
 他の例として，\kagi{$ Fx $}に
 \[
-   \text{
-    \kagi{$ (\exists a)(\exists t)(x = \classab{a,t}\con{1}Gat) $}
-   }
+    (\exists a)(\exists t)(x = \classab{a,t}\con{1}Gat)
 \]
 を，\kagi{$ \alpha $}に\kagi{$ \mathcal{P}(\timex{\mathbb{R}}{4}) $}を代入した結果．なお\kagi{$ Gat $}は，物理的対象$ a $が時間$ t $に一定の状態にあることを記述する文脈である．
 ただし，後者の架橋法則については，次のようにして$ \mathfrak{L} $の原始的述語が調整されるかもしれない．\kagi{$ Gat $}が表わす文脈が2項の原始的述語$p$を持つ原子文だとすると，$p$を破棄して，代わりに$a$の$t$における時間的部分$a\cap t$について真である1項述語$q$を使用する．すなわち，
 下記の\kagi{$ Gat $}に$p$を持つ原子文を，\kagi{$ Hx $}に$q$を持つ原子文を代入した結果が真であるなら，$p$を廃棄して，$q$を残す．
 \[
-   \text{
-        \kagi{$ (a)(t)(Gat\case{3}{0}{0}(\exists x)(Hx\con{1}x = a\cap t)) $}
-   }
+    (a)(t)(Gat\case{3}{0}{0}(\exists x)(Hx\con{1}x = a\cap t)).
 \]
 
 なお，時間の概念については，$x,y\in\timex{\mathbb{R}}{4}$がある座標系$f$に相対的に同時であるということを，
