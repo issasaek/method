@@ -21,14 +21,14 @@
 以下$l = \mathfrak{L}$と想定しよう．$\mathfrak{L}$においては，$2$項述語記号の$0$番目が要素関係を表わす\kagi{$ \in $}に相当する原始的述語である（\ref{ssec:標準言語}）．$u\subseteq l$が何らかのクラス理論であるとき，$u$の公理はこの\kagi{$ \in $}の用法を規定している．そして，$u$が$t$の存在論を確定しているというのは，以下の条件を充たすことを意味している．
 \begin{enumerate}
     \item $u$は$t$が理論ならその部分クラスであり，$t$が信念体系ならそれに受容されている理論である．
-    \item $t$の任意の原始的述語$f$について，$f$が$n$項述語記号の$i$番目であり，かつ，$\orp{n,i}\neq\orp{2,0}$であるとする．このとき，下記(1)(2)の型式に後述の代入を行った結果のいずれかが$t$のメンバーである．また，$t$が理論ならば当該代入結果のいずれかが$t$の公理である．さらに，(3)に後述の代入を行った結果が$u$のメンバーである．
+    \item $t$の任意の原始的述語$f$について，$f$が$n$項述語記号の$i$番目であり，かつ，$\orp{n,i}\neq\orp{2,0}$であるとする．このとき，下記(1)(2)の型式に後述の代入を行った結果のいずれかが$t$のメンバーである．また，$t$が理論ならば当該代入結果のいずれかが$t$の公理である．さらに，(3)に後述の代入を行った結果が$u$の定理である．
     \setcounter{equation}{0}
     \begin{align}
-        \classab{\orp{\alpha_1,\dots,\alpha_n}:R\alpha_1\dots\alpha_n} = \beta,\\
-        \classab{\orp{\alpha_1,\dots,\alpha_n}:R\alpha_1\dots\alpha_n} \subseteq \beta,\\
+        \classab{\orp{\alpha_1,\dots,\alpha_n}:R\alpha_1\dots\alpha_n} = \beta.\\
+        \classab{\orp{\alpha_1,\dots,\alpha_n}:R\alpha_1\dots\alpha_n} \subseteq \beta.\\
         (\exists x)(x = \beta).
     \end{align}
-    代入は以下のように行う．\kagi{$ R\alpha_1\dots\alpha_n $}の\kagi{$ R $}に$f$を，\kagi{$ \alpha_1\dots\alpha_n $}に$n$個の変項を並べて代入する．
+    代入の仕方は次の通り．\kagi{$ R $}に$f$を，\kagi{$ \alpha_1\dots\alpha_n $}に$n$個の変項を並べて代入する．
     \kagi{$\orp{\alpha_1,\dots,\alpha_n}$}には，同じ$n$個の変項から作られる順序対表現を代入する．\kagi{$ \beta $}には$l$の文から作られるクラス抽象体を代入する．
 \end{enumerate}
 
@@ -198,7 +198,7 @@ $}を表わす．
     \mathrm{Connex}\,\alpha
 $}は\kagi{$
     (x)(y)(x,y\in(\alpha\cup\breve{\alpha})\img\univ\case{1}{1}{1}\orp{x,y}\in\alpha\cup\breve{\alpha}\cup I)
-$}を表わす．
+$}を表わす，
 \end{df}
 
 \begin{df}
@@ -232,7 +232,7 @@ $}を表わす\footnote{
     \seq\alpha
 $}は\kagi{$
     \func\alpha\con{1}\breve{\alpha}\img\univ\in\mathrm{NO}\case{2}{1}{1}\breve{\alpha}\img\univ = \mathrm{NO}
-$}を表わす．
+$}を表わす，
 \end{df}
 
 \begin{df}
@@ -341,7 +341,7 @@ $n = 0$のケース：$p$は原子式であり，ある$n,i,k$が存在して，
     \orp{s,p}\in \mathrm{SR}^m & \case{3}{1}{1} \mathcal{O}\fap (s \resl k)\in r\fap\orp{n,i}\\
     &\:\, \case{3}{0}{1} \mathcal{O}\fap (s \resl k)\in r\fap\orp{n,i}\con{1}(\exists x)(x = f\resl(s \resl k))\\
     &\:\, \case{3}{0}{1} \mathcal{O}\fap (f\resl s \resl k)\in r'\fap\orp{n,i}\\
-    &\:\, \case{3}{0}{1} \orp{f\resl s,p}\in \mathrm{SR}^{m'}
+    &\:\, \case{3}{0}{1} \orp{f\resl s,p}\in \mathrm{SR}^{m'}.
 \end{align*}
 したがって，
 \begin{equation}
@@ -468,13 +468,13 @@ T \ref{thm:代替モデル充足}〜T \ref{thm:LST}は$\mathrm{ZFC}$（のモデ
 
 本稿で構築されたメソッドの適用をまとめよう．まず，不快な感情が生起したとき，
 \begin{enumerate}[label=(\arabic*)]
-    \item 関連する信念体系の部分$g$を仮説的に特定化する．
+    \item 関連する信念体系の部分$g$を仮説的に特定化する，
     \item 信念体系を部分的に最適化して$g$を取り除く．
 \end{enumerate}
 不快な感情が生起していないときでも，最適化可能な信念体系の部分$g$を発見したら，(2)を適用する．
 
 次に，(2)の適用の仕方はこうだ．
-\begin{enumerate}[label=(\arabic*)]
+\begin{enumerate}[label=(\alph*)]
     \item $g$の内包性を除去して論理的表記法に規格化した$g'$について，$g'$を信念体系に取り込み，$g$を廃棄する．
     \item $g$に関連して存在論的に不明瞭な部分があれば，$\mathrm{ZFC}$に基づいて存在論を確定する．
     \item 代替モデルに関する定理に基づいて，物理的世界の存在論を相対化する．
