@@ -18,7 +18,7 @@
 量化言語の文法は，原子式の構成要素として，無限個の変項\kagi{$x$}，\kagi{$x'$}，\kagi{$x''$}などと，無限個の述語記号
 \[
    \text{ 
-    \kagi{$ (F,) $}，\kagi{$ (F,)' $}，\kagi{$ (F,)'' $}，$\dots$，\kagi{$ (F,\!,) $}，\kagi{$ (F,\!,)' $}，\kagi{$ (F,\!,)'' $}，$\dots$
+    \kagi{$ (F,) $}，\kagi{$ (F,)' $}，\kagi{$ (F,)'' $}，$\cdots$，\kagi{$ (F,\!,) $}，\kagi{$ (F,\!,)' $}，\kagi{$ (F,\!,)'' $}，$\cdots$
     }
 \]
 を持つ．\kagi{$,$}の数が$n$，\kagi{$'$}の数が$i$であるとき，$n$項述語記号の$i$番目を意味する．実際上は，変項は\kagi{$x$}，\kagi{$y$}，\kagi{$z$}等々で，原始的述語以外の述語記号は\kagi{$F$}，\kagi{$G$}，\kagi{$H$}等々で代用される．
@@ -26,16 +26,16 @@
 そして論理式は，次の3つの規則により再帰的に記述される．
 \begin{enumerate}[label=(\arabic*)]
     \item \kagi{$ R\alpha_1\dots\alpha_n $}の\kagi{$ R $}に$0\neq n$項述語記号の$i$番目を，\kagi{$ \alpha_1\dots\alpha_n $}に$n$個の変項を並べて代入した結果は，論理式である．
-    \item \kagi{$\neg P$}と\kagi{$P\supset Q$}において，\kagi{$P$}と\kagi{$Q$}に任意の論理式を代入した結果は，論理式である．
+    \item \kagi{$\neg P$}と\kagi{$(P\supset Q)$}において，\kagi{$P$}と\kagi{$Q$}に任意の論理式を代入した結果は，論理式である．
     \item \kagi{$(\alpha)P$}において，\kagi{$\alpha$}に任意の変項を，\kagi{$P$}に任意の論理式を代入した結果は，論理式である．
 \end{enumerate}
 連言\kagi{$ \con{1} $}，選言\kagi{$ \lor $}，双条件法\kagi{$ \equiv $}等の他の真理関数は否定と条件法から，存在量化子\kagi{$ (\exists x) $}は普遍量化子から定義できる．否定と条件法及び普遍量化以外の組み合わせを原始的として，他をそこから定義することもできる．
 
 次に，1個の標準言語は，当該言語の述語として使用する述語記号を指定することによって規定される．例えば$\mathfrak{L}$では，$2$項述語記号の$0$番目\kagi{$ (F,\!,) $}が，要素関係を表わす\kagi{$ \in $}の形式的な表現であるとみなされる．すなわち，
-\begin{enumerate}[label=(\arabic*)]
-    \item \kagi{$\alpha\in\beta$}の\kagi{$\alpha$}と\kagi{$\beta$}に任意の変項を代入した結果は，\\\hfill
+\begin{itemize}
+    \item \kagi{$(\alpha\in\beta)$}の\kagi{$\alpha$}と\kagi{$\beta$}に任意の変項を代入した結果は，\\\hfill
     \kagi{$ (F,\!,)\alpha\beta $}に同一の代入をした結果を表わす．
-\end{enumerate}
+\end{itemize}
 この文脈的定義により，\kagi{$ (F,\!,) $}は，$\mathfrak{L}$における実質的な原始的述語として（実際上は\kagi{$ \in $}で代用して），使用される．
 \fndp{4}{4}の原初的言語は，\kagi{$ \in $}を唯一の原始的述語として持つ標準言語である．他方，$\mathfrak{L}$は原初的言語に多数の述語を追加したものであり，科学とテクノロジーに寄与する文が実質的に全て含まれる程度に包括的な標準言語である．
 そして，$\mathfrak{L}$の原始的述語以外の述語記号が出現しない論理式が$\mathfrak{L}$の文である．他方，文でない論理式は文の論理構造を表わす図式（量化図式）となる（$\mathfrak{L}$の原始的述語でない述語記号は$\mathfrak{L}$の開放文の位置を表わす）．
@@ -43,7 +43,7 @@
 なお，標準言語は変項以外の単称名辞を持たない．ある対象$z$の名前は，記述型\kagi{$ (\imath x)Ax $}の\kagi{$ Ax $}に$ z $についてのみ真である述語を代入した結果によって代用できる．そして，
 \kagi{$ F(\imath x)Ax $}という文脈は，同一性を表わす\kagi{$ = $}がその言語で定義可能であれば，
 \[
-    \text{\kagi{$ (\exists y)[Fy\con{1}(x)(Ax\case{3}{0}{1}x = y)] $}}
+    (\exists y)[Fy\con{1}(x)(Ax\case{3}{0}{1}x = y)]
 \]
 の省略形とみなすことができる\footnote{クワイン~\cite[p.\,250]{クワインb}}．
 
@@ -101,13 +101,13 @@ $ \mathfrak{L} $の外延性は，任意の$ p,q,r\in \mathfrak{L} $と，$ r $�
 \end{gather*}
 ところで，\fndp{19}{19}において，$\breve{\epsilon}\fap 0$は$\mathfrak{L}$の標準的モデルとして規定された．これを前提すれば，任意の$ p,q,r\in \mathfrak{L} $と，$ r $における$ p $の出現のいくつかを$ q $に置換した式$ r' $について，
 \[
-   (\breve{\epsilon}\fap 0)\parallel p = (\breve{\epsilon}\fap 0)\parallel q \case{1}{1}{2}r\in \mathrm{T}^{(\breve{\epsilon}\fap 0)}\case{3}{1}{1}r'\in\mathrm{T}^{(\breve{\epsilon}\fap 0)}.
+   (\breve{\epsilon}\fap 0)\parallel p = (\breve{\epsilon}\fap 0)\parallel q \case{1}{1}{2}r\in \mathrm{T}^{(\breve{\epsilon}\fap 0)}\case{3}{1}{1}r'\in\mathrm{T}^{(\breve{\epsilon}\fap 0)}
 \]
 であることとして，$\mathfrak{L}$の外延性を説明できる．
 
 しかし実際には，外延性を規定するのに外延を実体化する必要はない．さらに特定の言語やモデルにも依存せず，標準言語一般に適用可能な外延性の定式化が存在する．すなわち，型式
 \[
-   (x_1)\dots(x_n)(A\case{3}{0}{0}B)\case{1}{0}{1}C_A\case{3}{0}{0}C_B.
+   (x_1)\dots(x_n)(A\case{3}{0}{0}B)\case{1}{0}{1}C_A\case{3}{0}{0}C_B
 \]
 の\kagi{$ A $}，\kagi{$ B $}及び\kagi{$ C_A $}にそれぞれ任意の論理式$ p,q,r $を代入し，\kagi{$ C_B $}には，$ r $における$ p $の$0\leq n$箇所の出現を$ q $で置き換えた論理式$r'$を代入する．\kagi{$ (x_1)\dots(x_n) $}には，$ p,q $で自由出現し，かつ，$ r,r' $で束縛出現する変項のすべてを順次代入し，そのような変項がなければ削除する．以上の操作の結果は妥当式である\footnote{
     清水~\cite[p.\,84]{清水}．
@@ -129,7 +129,7 @@ $ \mathfrak{L} $の外延性は，任意の$ p,q,r\in \mathfrak{L} $と，$ r $�
 \end{gather}
 
 次に，\kagi{$ P\text{□→}Q $}の\kagi{$ P $}と\kagi{$ Q $}の位置に来る文に反事実的条件法の演算子「もし仮に〜ならば…だろう」を結合して得られる文の型とする．
-$x$は水中にも冷蔵庫内にもない砂糖の塊であり，\kagi{$ \alpha $}でそれを指示する単称記述の位置を表わす．すると，(1)(2)は共に偽である．
+$x$は水中にも冷蔵庫内にもない砂糖の塊であり，\kagi{$ \alpha $}でそれを指示する単称記述の位置を表わす．すると，(5)(6)は共に偽である．
 \begin{gather}
     \alpha\text{ は水に入れられる},\\
     \alpha\text{ は冷蔵庫に入れられる}.
@@ -171,7 +171,7 @@ $x$は水中にも冷蔵庫内にもない砂糖の塊であり，\kagi{$ \alpha
 ここでの問題は，S類型$y$と$ x\in\cty{\epsilon}y $について，$ e = \tilde{x}\fap 0\con{1}d = \tildel{\trgl{y}}\fap 0 $である場合における，抑制条件$\orp{e,d}$の（時区間$t$における）重要度の判定だ．ユーザー集合$\kappa$は信念体系の主体$ \tilde{x}\fap 1 $の単一クラスである．他方，抑制条件のクラスを扱うならば，
 \[
     e \subseteq \classab{\orp{\tilde{x}\fap 0,\tildel{\trgl{y}}\fap 0}:x\in\cty{\epsilon}y\con{1}\tilde{x}\fap 1 \in\kappa}\con{1}
-    d \subseteq \mathcal{P}(\mathfrak{E}),
+    d \subseteq \mathcal{P}(\mathfrak{E})
 \]
 としてもよい．いずれにせよ，$ e\in d $であることが因果的に決定する$ \kappa $メンバーの促進条件のクラス$\zeta_1$を次のように規定する．
 \begin{multline*}
@@ -181,7 +181,7 @@ $x$は水中にも冷蔵庫内にもない砂糖の塊であり，\kagi{$ \alpha
     b\in\mathrm{Reg}\con{1}
     (\exists x)(\tildel{\trgl{b}}\fap 0 = x^{::\epsilon}\cap\mser{(\arg b)}{0})\con{1}
     \tildel{\trgl{b}}\fap 1 = \trgl{b}\fap 0
-    }
+    }.
 \end{multline*}
 同じく抑制条件のクラス$\zeta_2$は，上の等式の\kagi{$ \tildel{\trgl{b}}\fap 1 = \trgl{b}\fap 0 $}を\kagi{$ \tildel{\trgl{b}}\fap 1 = \barl{(\trgl{b}\fap 0)}\cap\msec{(\arg b)}{0} $}に変更すれば得られる．
 なお，$\zeta_2$のメンバーは，それを惹起することによって$x\in\cty{\epsilon}y$となるような基礎抑制条件とは限らない．つまり，次のような$b$の抑制条件とは限らない．
@@ -220,7 +220,7 @@ $x$は水中にも冷蔵庫内にもない砂糖の塊であり，\kagi{$ \alpha
     (\exists z)(\exists w)[
         \orp{\orp{z,w},\orp{x,y}}\in\mathrm{IS}\con{1}
         \tildel{(x')}\uphr\bar{1}=\tilde{z}\uphr\bar{1}\con{1}\tildel{\trgl{(y')}}\uphr\bar{1}=\tildel{\trgl{w}}\uphr\bar{1}
-    ].
+    ]
 \]
 であり，かつ，$ x\in \exe{\epsilon}y $であることが作為行動であるケース．すると上記の遮断関係（\fndp{27}{27}）により，$ x'\in \exe{\epsilon}y' $であることはそれに対応する不作為行動になる．
 (1)(2)を充たす$ \orp{x,y},\orp{x',y'} $が仮に同一の法体系に含まれる法規制であるなら，一方が他方の機能を阻害しているから工学的妥当性に問題を生じるだろう．しかし，個人レベルの規制ではジレンマは頻発する．例えば，別れた恋人に連絡すれば復縁できるだろう状況において，あえて連絡しない不作為により分離状態が維持されているケース．この分離状態それ自体は抑制条件であり，それによって悲しみ等の情動も生じる．しかし，既に別の恋人がいるとかその他の事情を適用条件として，別れた恋人に連絡すると別のトラブルが発生する執行可能性が成り立つ．その結果，連絡する作為が遮断される．
