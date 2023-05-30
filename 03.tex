@@ -280,7 +280,9 @@ $}を表わす．
 \subsubsection{代替モデル}
 \label{sssec:代替モデル}
 
-本稿のメソッドの中核は，第一段階及び第二段階を通じて，信念体系の要素を標準言語の文，要するに$\mathfrak{L}$の文へと規格化・形式化することだった．そして\ref{ssec:外延性}では，標準言語に共通する性質として外延性が言われた．共通する重大な特徴がもう1つある．存在論的相対性だ．すなわち，存在量化を含む任意の$l\subseteq\mathrm{L}$がモデルを持つならば，$l$に異なる存在論的射程（$l$に含まれる存在量化の変項の値からなるクラス）を与える2個の$l$のモデルが存在する．なお，$m\in\mathrm{MD}$が$l$のモデルであるというのは，$l$のすべてのメンバーが$m$による解釈のもとで真であるということだ（$l\subseteq\mathrm{T}^{m}$）．
+本稿のメソッドの中核は，第一段階及び第二段階を通じて，信念体系の要素を標準言語の文，要するに$\mathfrak{L}$の文へと規格化・形式化することだった．そして\ref{ssec:外延性}では，標準言語に共通する性質として外延性が言われた．共通する重大な特徴がもう1つある．存在論的相対性だ\footnote{
+    クワイン~\cite[pp.\,44-46]{クワインe}．
+}．すなわち，存在量化を含む任意の$l\subseteq\mathrm{L}$がモデルを持つならば，$l$に異なる存在論的射程（$l$に含まれる存在量化の変項の値域を集めたクラス）を与える2個の$l$のモデルが存在する．なお，$m\in\mathrm{MD}$が$l$のモデルであるというのは，$l$のすべてのメンバーが$m$による解釈のもとで真であるということだ（$l\subseteq\mathrm{T}^{m}$）．
 存在論的相対性それ自体は\ref{sssec:存在論的相対性}で立証される（T \ref{thm:存在論的相対性}）．ここでは補助定理（T \ref{thm:代替モデル充足}，T \ref{thm:代替モデル真理}）及び関連する定理（T \ref{thm:LST}）を扱う．まず，いくつかの概念を準備しよう．
 
 \paragraph*{論理式の複雑度}任意の$p\in\mathrm{L}$にその複雑度（真理関数及び量化子の出現回数）を与える関数$\mathfrak{d}$を再帰的に規定する．すなわち，$p$が原子式のとき，$\mathfrak{d}\fap p = 0$．また，任意の$q,q'\in\mathrm{L}$について，
@@ -431,11 +433,12 @@ T \ref{thm:代替モデル真理}の仮定により，$m$から$m'$への代替�
 
 $m\in\mathrm{MD}$で解釈された$l\subseteq\mathrm{L}$の存在論的射程$\beth^m_l$を，
 \[
-    \beth^m_l = \union{
-        \classab{x:(\exists i)(\exists p)(\mathrm{var}\,p = \classab{\orp{i,0}}\con{1}\mathbf{N}\mathbf{G}_i\mathbf{N}p\in l\con{1}x = m\exten p)}
-    }
+    \beth^m_l = \classab{x:(\exists i)(\exists p)(\mathrm{var}\,p = \classab{\orp{i,0}}\con{1}\mathbf{N}\mathbf{G}_i\mathbf{N}p\in l\cap\mathrm{T}^{m}\con{1}x = (m\exten p)\neq \mathcal{L}\fap m)}
 \]
-と定義する．$\beth^m_l$は，$l$に含まれる存在量化の（$m$で解釈された）変項の値からなるクラスである．
+と定義する\footnote{
+    \kagi{$ \neq \mathcal{L}\fap m $}という条件は，$l$に\kagi{$ (\exists x)(x=x) $}に相当する存在量化が含まれる場合に，モデルの対象領域が異なるだけで存在論的射程の同一性が失われることを防ぐためである．
+}．
+$z\in\beth^m_l$は，$l$に含まれる（$m$で真と解釈される）ある存在量化の変項の値からなるクラスである．
 次に，
 \[
     (\exists m)(\exists m')(m,m'\in\mathrm{MD}\con{1}l\subseteq\mathrm{T}^{m}\cap \mathrm{T}^{m'}\con{1}\beth^m_l\neq \beth^{m'}_l)
@@ -460,32 +463,33 @@ $m\in\mathrm{MD}$で解釈された$l\subseteq\mathrm{L}$の存在論的射程$\
 \end{gather*}
 とすると，$f$は$\orp{u,r}$から$\orp{u',r'}$への代替関数であり，$\orp{u',r'}$は$\orp{u,r}$の代替モデルである．
 それゆえ，T \ref{thm:代替モデル真理}により，$l\subseteq \mathrm{T}^{m'}$．
-次に，$\beth^{m'}_l = f\img(\beth^{m}_l)$であり，$f$に関して，
+次に，$f$について，
 \[
     (x)(\Lambda\neq x\subseteq \arg f\case{1}{1}{1}f\img x \neq x)
 \]
-が成り立つから，$f\img(\beth^{m}_l)\neq \beth^{m}_l$．それゆえ，$\beth^{m'}_l\neq \beth^{m}_l$．以上から$l$は存在論的に相対的である．
+が成り立つ．それゆえ，$\beth^{m}_l = \beth^{m'}_l$と仮定すると，$\union{(\beth^{m}_l)}\neq\Lambda$の任意のメンバーに対して，$\union{(\beth^{m}_l)}$のあるメンバーが再び要素関係を持つようになる．つまり，
+\[
+    \neg(\exists y)[y\in \union{(\beth^{m}_l)}\con{1}\union{(\beth^{m}_l)}\cap y =\Lambda].
+\]
+これはA \ref{axim:正則性}と矛盾するから，$\beth^{m}_l\neq \beth^{m'}_l$．以上から$l$は存在論的に相対的である．
 \end{pfx}
 \end{thm}
 
-\noindent 上記の$f = \lambda_x\classab{x}\uphr u$は対象領域$ u $のメンバーをその単一クラスに変換するが，他の代替関数によっても$l$の存在論的相対性を示すことができる\footnote{
-    クワイン~\cite[pp.\,44-46]{クワインe}．
-}．例えば，$ f = \lambda_x(\bar{x}\cap u)\uphr u $とすると，$u$上の補クラスに変換する．また，$ f = \lambda_x(\orp{\Lambda,x})\uphr u $とすると，$u$のメンバーを$\Lambda$とそれの順序対に変換する．このような代替関数は際限なく作れるが，代替モデルの対象領域は元のモデルの対象領域と同じサイズに制限されている．
-他方，$m$が$l$のモデルであるとき，T \ref{thm:LST}によって，$\mathbb{N}$を領域とする$l$のモデルが存在することになる．したがって，$\beth^m_l\nsubseteq\mathbb{N}$である限り，$l$の存在論的相対性が帰結する．
+\noindent 上記で$f = \lambda_x\classab{x}\uphr u$でなくても，$l$の存在論的相対性は成り立つ．例えば，$ f = \lambda_x(\bar{x}\cap u)\uphr u $であるケース．このような代替関数は際限なく存在するが，代替モデルの対象領域は元のモデルのそれと同じサイズに制限される．これに対して，$m$が$l$のモデルであるとき，T \ref{thm:LST}によって，$\mathbb{N}$を領域とする$l$のモデルが存在することになる．したがって，$\union{(\beth^m_l)}\nsubseteq\mathbb{N}$である限り，$l$の存在論的相対性が帰結する．
 
 T \ref{thm:存在論的相対性}は，$l$が包括的な世界記述$\mathrm{T}^{(\breve{\epsilon}\fap 0)}\cap\mathfrak{L}$であるとき，または，$l$が標準的な科学を包括する理論$\mathfrak{K}$である場合に，特に重要な意味を持つ．すなわち，$\mathfrak{K}\subseteq \mathrm{T}^{(\breve{\epsilon}\fap 0)}\cap\mathfrak{L}\subseteq\mathrm{T}^{(\breve{\epsilon}\fap 0)}$であると想定されているから，解釈空間の開始点$\breve{\epsilon}\fap 0 $は，$\mathfrak{K}$の（そしてトリヴィアルに$\mathrm{T}^{(\breve{\epsilon}\fap 0)}\cap\mathfrak{L}$の）モデルである．
 したがって，$\mathfrak{K}$は存在論的に相対的である．すなわち，$\mathfrak{K}$にそれぞれ異なる存在論的射程を与えるような$\mathfrak{K}$のモデル$m,m'$が存在する．この意味で，何が存在するかは事実の問題ではない．
-もちろん本稿では，T \ref{thm:代替モデル充足}〜T \ref{thm:存在論的相対性}を証明したり，理論とそのモデルを対象化して考察する際，$\mathrm{ZFC}$を使用している．それゆえ，$\mathrm{ZFC}$の存在論は予め前提されている．$\mathrm{V} = \union{(\mathrm{W}\img\univ)}$であることは前提されているのだ．したがって，ここでの話の要点は，$\mathfrak{K}$の存在論的射程が$\union{(\mathrm{W}\img\univ)}$のどの部分であるかのかという問いは，事実の問題ではないということである．つまり，我々が馴染んでいる現実世界はないということだ．累積階層のどの部分についても，本性として物理的現実性を帯びているような部分はない．
+もちろん本稿では，T \ref{thm:代替モデル充足}〜T \ref{thm:存在論的相対性}を証明したり，理論とそのモデルを対象化して考察する際，$\mathrm{ZFC}$を使用している．それゆえ，$\mathrm{ZFC}$の存在論は予め前提されている．したがって，ここでの話の要点は，$\mathfrak{K}$の存在論的射程の要素が$\mathrm{V} = \union{(\mathrm{W}\img\univ)}$のどの部分であるかのかという問いは，事実の問題ではないということである．つまり，我々が馴染んでいる現実世界はないということだ．累積階層のどの部分についても，本性として物理的現実性を帯びているような部分はない．
 
 T \ref{thm:存在論的相対性}は$l=\mathrm{ZFC}$であるときも当然成り立つ．つまり，$\mathrm{ZFC}$がモデルを持つならば，$\mathrm{ZFC}$は存在論的に相対的である．しかし，$\mathrm{ZFC}$のモデルを$\mathrm{ZFC}$の中で構成することはできない．したがって，$\mathrm{ZFC}$の存在論的相対性を示すには，$\mathrm{ZFC}$より強いクラス理論を使用する必要がある．体系を強める典型的な方法は，いわゆる巨大基数の存在を認める公理を追加することだ\footnote{
     薄葉・藤田~\cite{薄葉}等を参照．
 }．
-しかし，そうすると今度は，その強められた体系$\mathrm{ZFC}^{+}$の存在論が，それゆえに$\mathrm{ZFC}$の存在論が予め前提される．つまり，$\mathrm{ZFC}^{+}$を使用して$\mathrm{ZFC}$の存在論的相対性を示したとしても，その時には既に，$\union{(\mathrm{W}\img\univ)}$の全てのメンバーの存在が認められている．さらに$\mathrm{ZFC}^{+}$に対しても，それが認める以上の巨大基数を要請してそれを強めることができるが（$\mathrm{ZFC}^{++}$），後の展開は同じことだ．つまり，クラスの存在論は事実上常に実在論的に解釈される．
+しかし，そうすると今度は，その強められた体系$\mathrm{ZFC}^{+}$の存在論が，それゆえに$\mathrm{ZFC}$の存在論が予め前提される．さらに$\mathrm{ZFC}^{+}$に対しても，それが認める以上の巨大基数を要請してそれを強めることができるが（$\mathrm{ZFC}^{++}$），後の展開は同じことだ．つまり，$\mathrm{ZFC}$は事実上常に実在論的に解釈される．
 これに対して，$\mathfrak{K}$の存在論的相対性を示すために，$\mathfrak{K}$の非集合論的定理のような物理的世界に関する理論が必要になることはない．
 
 この点に関連して，$\mathfrak{K}$の存在論的相対性の実際的な意味は，存在論的な確定の仕方が$\mathfrak{K}$と異なるが，それと互換的に使用できるような理論$\mathfrak{K}'$を構成できるだろうということだ．すなわち，$\mathfrak{K}'$の非集合論的公理は，$\mathfrak{K}$のそれと同一であるか，または，束縛変項の値域の明示的制限の仕方だけが異なる．前者の場合，$\mathfrak{K}'$の還元規則が$\mathfrak{K}$のそれと異なる．後者の場合はどちらでもよい．これらの相違に加えて，それぞれの存在論を確定している集合論自体も異なり得る．両者の相違は，何らか2個の$\mathfrak{K}$のモデル間の相違を反映していると言えるだろう．
-クラス理論についても，例えば，$\mathrm{ZC}$の\kagi{$ \in $}を別の述語記号に交換した$\mathrm{ZC}'$を使えば，同じような考察ができる．すなわち，$\mathrm{ZC}'\cup\mathrm{ZFC}$を1個の理論とみなせば，それと互換的な理論を上記のやり方で構成できるだろう．しかし，そもそも$\mathrm{ZFC}$に$\mathrm{ZC}'$を追加して使用する意味がないため\footnote{
-    $\mathrm{ZC}'$に言及して，それの形式的構造を云々する数学的な意味はあり得る．しかし，これは$\mathrm{ZC}'$を使用しているのではない．
+クラス理論についても，例えば，$\mathrm{ZC}$の\kagi{$ \in $}を別の述語記号に交換して，束縛変項の値域を制限した$\mathrm{ZC}'$を使えば，同様に考えられる．すなわち，$\mathrm{ZC}'\cup\mathrm{ZFC}$に還元規則を加えたものを1個の理論とみなせば，それと互換的な理論を上記のやり方で構成できるだろう．しかし，このような合成理論をクラス理論として使用する意味はないため\footnote{
+    $\mathrm{ZC}'$やそれに還元規則を追加した体系に言及して，その形式的構造を云々する数学的な意味はあり得る．しかし，これは$\mathrm{ZC}'$を使用しているのではない．
 }，それと互換的な理論を構成したところで実際上の意味はない．
 
 \subsubsection{滅法}
